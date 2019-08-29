@@ -1,3 +1,30 @@
-img {
-    width: 300px;
+
+#splashscreen {
+    width: 25%;
+    margin: 0 auto;
+    border-radius: 5px;
+    position: fixed;
+    top: 300px;
+    left: 500px;
+    visibility: show;
+}
+input {
+    width: 500px;
+    height: 45px;
+    border-radius: 25px;
+    user-select: none;
+    outline: none;
+    margin: 5px;
+}
+#start-btn {
+    position: relative;
+    left: 180px;
+}
+body{
+    background-color: #001f3f;
+}
+.band{ 
+    color: yellow;
+    font-family: 'Monoton', cursive;
+    text-align: center;
 }

@@ -1,0 +1,8 @@
+img {
+    width: 300px;
+    /* border-radius: 50%; */
+}
+
+.jumbotron {
+    border-radius: 0rem;
+}
