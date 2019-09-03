@@ -1,14 +1,19 @@
 
 #splashscreen {
-    width: 25%;
-    margin: 0 auto;
+    height: 30%;
+    width: 36%;
+    margin: auto;
     border-radius: 5px;
+<<<<<<< HEAD
     position: fixed;
     top: 300px;
     left: 500px;
     visibility: show;
+=======
+    padding-top: 200px
+>>>>>>> fecca8f0751a9d6ec8e28598f4f8d043f492d6a2
 }
-input {
+#band-search{
     width: 500px;
     height: 45px;
     border-radius: 25px;
@@ -18,7 +23,7 @@ input {
 }
 #start-btn {
     position: relative;
-    left: 180px;
+    left: 190px;
 }
 body{
     background-color: #001f3f;
@@ -27,4 +32,26 @@ body{
     color: yellow;
     font-family: 'Monoton', cursive;
     text-align: center;
+}
+@media only screen and (max-width: 768px){
+    #band-search{
+        width: 400px;
+        margin: auto;
+    }
+    #splashscreen {
+        width: 500px;
+        margin: auto;
+    }
+    
+}
+@media only screen and (max-width: 500px){
+    #band-search{
+        width: 400px;
+        margin: auto;
+    }
+    #splashscreen {
+        width: 500px;
+        margin: 0px;
+    }
+    
 }
