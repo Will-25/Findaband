@@ -4,14 +4,7 @@
     width: 36%;
     margin: auto;
     border-radius: 5px;
-<<<<<<< HEAD
-    position: fixed;
-    top: 300px;
-    left: 500px;
-    visibility: show;
-=======
     padding-top: 200px
->>>>>>> fecca8f0751a9d6ec8e28598f4f8d043f492d6a2
 }
 #band-search{
     width: 500px;

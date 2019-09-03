@@ -1,8 +1,19 @@
-img {
-    width: 300px;
-    /* border-radius: 50%; */
-}
+/* img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+} */
 
 .jumbotron {
     border-radius: 0rem;
+    padding: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #001f3f;
+}
+
+.rounded-circle {
+    border-radius: 50%!important;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
 }
