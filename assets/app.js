@@ -1,10 +1,12 @@
 $(document).ready(function() {
   var artist = "ariana grande";
 
+
+ 
   var ticketURL =
     "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&keyword=" +
     artist +
-    ticketAPI;
+    ticketAPI ;
   var bandsURL = "https://rest.bandsintown.com/artists/" + artist + bandsAPI;
 
   // Ajax call for bandsAPI

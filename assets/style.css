@@ -6,6 +6,9 @@
     border-radius: 5px;
     padding-top: 200px
 }
+h1 {
+    font-size: 2.5em;
+}
 #band-search{
     width: 500px;
     height: 45px;
@@ -25,6 +28,50 @@ body{
     color: yellow;
     font-family: 'Monoton', cursive;
     text-align: center;
+}
+.jumbotron {
+    border-radius: 0rem;
+    padding: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(133, 13, 13, 0.19);
+    /* background-image: linear-gradient(#85144b,#FF4136); */
+    background-image: linear-gradient(#001f3f,#0074D9);
+
+}
+
+.rounded-circle {
+    border-radius: 50%!important;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-width: 3px !important;
+    border-style: solid;
+    border-color: #FFFFFF !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(133, 13, 13, 0.19);
+}
+
+.band-name {
+    /* font-family: 'Arvo', serif; */
+    /* font-family: 'Shadows Into Light', cursive; */
+    /* font-family: 'Permanent Marker', cursive; */
+    font-family: 'Rock Salt', cursive;
+    /* font-family: 'Press Start 2P', cursive; */
+    /* font-family: 'Monoton', cursive; */
+    /* font-family: 'Noto Serif JP', serif; */
+    font-size: 25px;
+    color: #FFFFFF;    
+}
+
+h1 {
+    padding-top: 1rem;
+    /* padding-bottom: 1rem; */
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.navbar-brand {
+    font-family: 'Monoton', cursive;
+}
+.bandPageNew {
+    display: none;
 }
 @media only screen and (max-width: 768px){
     #band-search{
