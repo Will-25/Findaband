@@ -17,7 +17,7 @@ h1 {
     outline: none;
     margin: 5px;
 }
-#start-btn {
+.start-btn {
     position: relative;
     left: 190px;
 }
