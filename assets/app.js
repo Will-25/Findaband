@@ -9,8 +9,6 @@ $(document).ready(function () {
         $(".bandPageNew").hide();
     });
 
-
-
     $("#start-btn").on("click", function (event) {
         event.preventDefault();
         $("#splashscreen").hide();
