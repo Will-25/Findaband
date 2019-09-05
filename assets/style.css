@@ -6,9 +6,21 @@
     border-radius: 5px;
     padding-top: 200px;
 }
+
 h1 {
     font-size: 2.5em;
 }
+
+.card-title {
+    margin-right: 100px;
+}
+
+.card-text {
+    margin-right: 30px;
+}
+
+
+
 #band-search{
     width: 500px;
     height: 45px;
