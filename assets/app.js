@@ -3,7 +3,11 @@ $(document).ready(function () {
 
 
 
-
+    $("#homeButton").on("click", function(event){
+        event.preventDefault();
+        $("#splashscreen").show();
+        $(".bandPageNew").hide();
+    });
 
 
 
