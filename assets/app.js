@@ -21,7 +21,7 @@ var apiCall = function() {
       // Band Facebook Link
       console.log(response.facebook_page_url);
   });
-
+  
   // Ajax call for ticketAPI
   $.ajax({
       url: ticketURL,
@@ -48,6 +48,11 @@ var apiCall = function() {
 
 }
 
+  $("#homeButton").on("click", function(event){
+        event.preventDefault();
+        $("#splashscreen").show();
+        $(".bandPageNew").hide();
+    });
 
     $("#start-btn").on("click", function (event) {
         event.preventDefault();
