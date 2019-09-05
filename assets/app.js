@@ -9,7 +9,8 @@ $(document).ready(function () {
 
     $("#start-btn").on("click", function (event) {
         event.preventDefault();
-        console.log("click")
+        $("#splashscreen").hide();
+        $(".bandPageNew").show();
         var artist = $("#band-search").val().trim();
 
         var ticketURL =
@@ -52,10 +53,19 @@ $(document).ready(function () {
             console.log(response._embedded.events[0]._embedded.venues[0].city.name);
             // Address
             console.log(response._embedded.events[0]._embedded.venues[0].address.line1);
+            
         });
 
         // PriceRange????
     });
 
 });
+
+/* <div class="card w-75">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Button</a>
+  </div>
+</div> */
 
