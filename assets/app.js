@@ -60,7 +60,6 @@ var apiCall = function() {
         $(".bandPageNew").show();
         document.body.style.backgroundColor = "#DDDDDD";
         apiCall();
-        // PriceRange????
     });
 
     $("#second-btn").on("click", function (event) {
@@ -77,4 +76,3 @@ var apiCall = function() {
     <a href="#" class="btn btn-primary">Button</a>
   </div>
 </div> */
-
