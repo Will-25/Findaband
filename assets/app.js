@@ -2,6 +2,7 @@ $(document).ready(function () {
 
     var count = 0;
     var makeCard = function() {
+      $(".cardHolder").empty();
         for(var i = 0; i < 5; i++) {
             var holder = $("<div class ='card" + count + "'>");
             $(".cardHolder").append(holder);
