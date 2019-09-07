@@ -20,8 +20,6 @@ $(document).ready(function() {
       $(".container" + count).append(button);
       count++;
     }
-    // var row = $("<div class= 'col-md-6 cardHolder" + count + "'>")
-    // $(".row").append(row)
   };
 
   var apiCall = function() {
@@ -41,13 +39,17 @@ $(document).ready(function() {
     $.ajax({
       url: bandsURL,
       method: "GET"
-    }).then(function(response) {
-      // Band Name
-      console.log(response.name);
-      // Band Image
-      console.log(response.image_url);
-      // Band Facebook Link
-      console.log(response.facebook_page_url);
+    }).then(function (response) {
+        // Band Name
+        var name = response.name;
+        $(".band-name").text(name)
+        // Band Image
+        var image = response.image_url;
+        console.log(image);
+        $(".rounded-circle").attr("src", image);
+        // Band Facebook Link
+        var facebook = response.facebook_page_url;
+        $(".name").text(facebook);
     });
 
     // Ajax call for ticketAPI
