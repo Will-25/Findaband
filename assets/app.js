@@ -95,6 +95,7 @@ $(document).ready(function() {
     $("#splashscreen").show();
     $(".bandPageNew").hide();
     document.body.style.backgroundColor = "#001f3f";
+    $("#band-search").val("");
   });
 
   $("#start-btn").on("click", function(event) {
