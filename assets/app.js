@@ -35,6 +35,8 @@ $(document).ready(function() {
       ticketAPI;
     var bandsURL = "https://rest.bandsintown.com/artists/" + artist + bandsAPI;
 
+    var tasteURL = "https://tastedive.com/api/similar?limit=4&type=music&info=1&q=" + artist + tasteAPI;
+
     // Ajax call for bandsAPI
     $.ajax({
       url: bandsURL,
@@ -84,13 +86,21 @@ $(document).ready(function() {
       // City
       console.log(response._embedded.events[0]._embedded.venues[0].city.name);
       // Address
-      console.log(
-        response._embedded.events[0]._embedded.venues[0].address.line1
-      );
-    });
-  };
+      console.log(response._embedded.events[0]._embedded.venues[0].address.line1);
 
-  $("#homeButton").on("click", function(event) {
+    });
+
+    $.ajax({
+      url: tasteURL,
+      method: "GET"
+    }).then(function (response) {
+      console.log(response.Similar.Info[0].wTeaser);
+
+    });
+
+  }
+
+  $("#homeButton").on("click", function (event) {
     event.preventDefault();
     $("#splashscreen").show();
     $(".bandPageNew").hide();
