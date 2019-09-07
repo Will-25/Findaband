@@ -1,12 +1,18 @@
 $(document).ready(function () {
-
+var count = 0;
 var makeCard = function() {
-var a = "<div class ='card card" + count + ">"
-var b = "<div class ='card-body'" + count + ">"
-var c = "<h5 class='card-title d-inline'" +count + ">"
-var d = "<p class='text-right card-text d-inline'" + count + ">"
-var e = "<a href='#' class='text-right btn btn-primary'" + count + ">"
+var a = $("<div class ='card card'" + count + ">");
+$(".cardHolder").append(a);
+var b = $("<div class ='card-body body'" + count + ">");
+$(".card").append(b);
+var c = $("<h5 class='card-title d-inline head'" + count + ">");
+$(".body").append(c);
+var d = $("<p class='text-right card-text d-inline p'" + count + ">");
+$(".body").append(d);
+var e = $("<a href='#' class='text-right btn btn-primary btn'" + count + ">");
+$(".body").append(e);
 
+};
 
 
 
@@ -69,6 +75,7 @@ var apiCall = function() {
         event.preventDefault();
         $("#splashscreen").hide();
         $(".bandPageNew").show();
+        makeCard();
         apiCall();
 
         // PriceRange????
