@@ -58,6 +58,7 @@ var apiCall = function() {
         event.preventDefault();
         $("#splashscreen").hide();
         $(".bandPageNew").show();
+        document.body.style.backgroundColor = "#DDDDDD";
         apiCall();
         // PriceRange????
     });
