@@ -1,36 +1,37 @@
 $(document).ready(function () {
 
-
     var count = 0;
     var makeCard = function() {
-    // var row = $("<div class= 'col-md-6 cardHolder" + count + "'>")
-    // $(".row").append(row)
-    var holder = $("<div class ='card" + count + "'>");
-    $(".cardHolder").append(holder);
-    var title = $("<h2 class='card-title d-inline head" + count + "'>");
-    $(".card" + count).append(title);
-    var card = $("<div class ='card-body body" + count + "'>");
-    $(".card" + count).append(card);
-    var venue = $("<h3 class = 'card-title d-inline venue" + count + "'>")
-    $(".body" + count).append(venue);
-    var right = $("<p class='text-right card-text d-inline p" + count + "'>");
-    $(".body" + count).append(right);
-    var button = $("<a href='#' class='text-right btn btn-primary btn" + count + "'>");
-    $(".body" + count).append(button);
-    
-    };
-    
-    
-    
-    
+        for(var i = 0; i < 5; i++) {
+            var holder = $("<div class ='card" + count + "'>");
+            $(".cardHolder").append(holder);
+            var title = $("<h2 class='card-title d-inline head" + count + "'>");
+            $(".card" + count).append(title);
+            var card = $("<div class ='card-body body" + count + "'>");
+            $(".card" + count).append(card);
+            var venue = $("<h3 class = 'card-title d-inline venue" + count + "'>")
+            $(".body" + count).append(venue);
+            var right = $("<p class='text-right card-text d-inline p" + count + "'>");
+            $(".body" + count).append(right);
+            var button = $("<a href='#' class='text-right btn btn-primary btn" + count + "'>");
+            $(".body" + count).append(button);
+            count++;
+        }
+        // var row = $("<div class= 'col-md-6 cardHolder" + count + "'>")
+        // $(".row").append(row)
+        };
+        
     var apiCall = function() {
-      var artist = $("#band-search").val().trim();
-    
-      var ticketURL =
-          "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&keyword=" +
-          artist +
-          ticketAPI;
-      var bandsURL = "https://rest.bandsintown.com/artists/" + artist + bandsAPI;
+
+        makeCard();
+
+    var artist = $("#band-search").val().trim();
+
+    var ticketURL =
+        "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&keyword=" +
+        artist +
+        ticketAPI;
+    var bandsURL = "https://rest.bandsintown.com/artists/" + artist + bandsAPI;
     
       // Ajax call for bandsAPI
       $.ajax({
@@ -82,11 +83,8 @@ $(document).ready(function () {
             event.preventDefault();
             $("#splashscreen").hide();
             $(".bandPageNew").show();
-            makeCard();
-            document.body.style.backgroundColor = "#DDDDDD";
             apiCall();
-    
-            // PriceRange????
+            document.body.style.backgroundColor = "#DDDDDD";
         });
     
         $("#second-btn").on("click", function (event) {
