@@ -43,10 +43,11 @@ $(document).ready(function () {
           $(".band-name").text(name)
           // Band Image
           var image = response.image_url;
-          $(".round-circle border").attr("src", image)
+          console.log(image);
+          $(".rounded-circle").attr("src", image);
           // Band Facebook Link
-          var facebook = response.facebook_page_url
-          $(".name").text(facebook)
+          var facebook = response.facebook_page_url;
+          $(".name").text(facebook);
       });
       
       // Ajax call for ticketAPI
