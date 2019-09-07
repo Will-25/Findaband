@@ -1,5 +1,16 @@
 $(document).ready(function () {
 
+var makeCard = function() {
+var a = "<div class ='card card" + count + ">"
+var b = "<div class ='card-body'" + count + ">"
+var c = "<h5 class='card-title d-inline'" +count + ">"
+var d = "<p class='text-right card-text d-inline'" + count + ">"
+var e = "<a href='#' class='text-right btn btn-primary'" + count + ">"
+
+
+
+
+
 var apiCall = function() {
   var artist = $("#band-search").val().trim();
 
@@ -59,6 +70,7 @@ var apiCall = function() {
         $("#splashscreen").hide();
         $(".bandPageNew").show();
         apiCall();
+
         // PriceRange????
     });
 
@@ -69,11 +81,4 @@ var apiCall = function() {
 
 });
 
-/* <div class="card w-75">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Button</a>
-  </div>
-</div> */
-
+/*  */
