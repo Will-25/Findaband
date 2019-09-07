@@ -1,16 +1,22 @@
 $(document).ready(function () {
+
+
 var count = 0;
 var makeCard = function() {
-var a = $("<div class ='card card'" + count + ">");
-$(".cardHolder").append(a);
-var b = $("<div class ='card-body body'" + count + ">");
-$(".card").append(b);
-var c = $("<h5 class='card-title d-inline head'" + count + ">");
-$(".body").append(c);
-var d = $("<p class='text-right card-text d-inline p'" + count + ">");
-$(".body").append(d);
-var e = $("<a href='#' class='text-right btn btn-primary btn'" + count + ">");
-$(".body").append(e);
+// var row = $("<div class= 'col-md-6 cardHolder" + count + "'>")
+// $(".row").append(row)
+var holder = $("<div class ='card" + count + "'>");
+$(".cardHolder").append(holder);
+var title = $("<h2 class='card-title d-inline head" + count + "'>");
+$(".card" + count).append(title);
+var card = $("<div class ='card-body body" + count + "'>");
+$(".card" + count).append(card);
+var venue = $("<h3 class = 'card-title d-inline venue" + count + "'>")
+$(".body" + count).append(venue);
+var right = $("<p class='text-right card-text d-inline p" + count + "'>");
+$(".body" + count).append(right);
+var button = $("<a href='#' class='text-right btn btn-primary btn" + count + "'>");
+$(".body" + count).append(button);
 
 };
 
