@@ -10,12 +10,14 @@ $(document).ready(function() {
       $(".card" + count).append(card);
       var venue = $("<h3 class = 'card-title d-inline venue" + count + "'>");
       $(".body" + count).append(venue);
+      var container = $("<div class='tix-btn container" + count + "'>");
+      $(".body" + count).append(container);
       var right = $("<p class='text-right card-text d-inline p" + count + "'>");
-      $(".body" + count).append(right);
+      $(".container" + count).append(right);
       var button = $(
         "<a href='#' class='text-right btn btn-primary tix-btn btn" + count + "'>"
       ).text("BUY TICKETS");
-      $(".body" + count).append(button);
+      $(".container" + count).append(button);
       count++;
     }
     // var row = $("<div class= 'col-md-6 cardHolder" + count + "'>")
