@@ -69,6 +69,7 @@ var apiCall = function() {
         event.preventDefault();
         $("#splashscreen").show();
         $(".bandPageNew").hide();
+        document.body.style.backgroundColor = "#001f3f";
     });
 
     $("#start-btn").on("click", function (event) {
@@ -76,6 +77,7 @@ var apiCall = function() {
         $("#splashscreen").hide();
         $(".bandPageNew").show();
         makeCard();
+        document.body.style.backgroundColor = "#DDDDDD";
         apiCall();
 
         // PriceRange????
