@@ -39,11 +39,14 @@ $(document).ready(function () {
           method: "GET"
       }).then(function (response) {
           // Band Name
-          console.log(response.name);
+          var name = response.name;
+          $(".band-name").text(name)
           // Band Image
-          console.log(response.image_url);
+          var image = response.image_url;
+          $(".round-circle border").attr("src", image)
           // Band Facebook Link
-          console.log(response.facebook_page_url);
+          var facebook = response.facebook_page_url
+          $(".name").text(facebook)
       });
       
       // Ajax call for ticketAPI
