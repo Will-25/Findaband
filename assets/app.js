@@ -32,6 +32,8 @@ $(document).ready(function () {
         artist +
         ticketAPI;
     var bandsURL = "https://rest.bandsintown.com/artists/" + artist + bandsAPI;
+
+    var tasteURL = "https://tastedive.com/api/similar?limit=4&type=music&info=1&q=" + artist + tasteAPI;
     
       // Ajax call for bandsAPI
       $.ajax({
@@ -69,6 +71,14 @@ $(document).ready(function () {
           console.log(response._embedded.events[0]._embedded.venues[0].address.line1);
           
       });
+
+      $.ajax({
+        url: tasteURL,
+        method: "GET"
+    }).then(function (response) {
+      console.log(response.Similar.Info[0].wTeaser);
+      
+    });
     
     }
     
