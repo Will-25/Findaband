@@ -1,32 +1,33 @@
-$(document).ready(function () {
-
+$(document).ready(function() {
   var count = 0;
-  var makeCard = function () {
-    $(".cardHolder").empty();
+  var makeCard = function() {
     for (var i = 0; i < 5; i++) {
-      var holder = $("<div class ='card" + count + "'>");
+      var holder = $("<div class ='card card" + count + "'>");
       $(".cardHolder").append(holder);
-      var title = $("<h2 class='card-title d-inline head" + count + "'>");
+      var title = $("<h2 class='card-header head" + count + "'>");
       $(".card" + count).append(title);
       var card = $("<div class ='card-body body" + count + "'>");
       $(".card" + count).append(card);
-      var venue = $("<h3 class = 'card-title d-inline venue" + count + "'>")
+      var venue = $("<h3 class = 'card-title d-inline venue" + count + "'>");
       $(".body" + count).append(venue);
+      var container = $("<div class='tix-btn container" + count + "'>");
+      $(".body" + count).append(container);
       var right = $("<p class='text-right card-text d-inline p" + count + "'>");
-      $(".body" + count).append(right);
-      var button = $("<a href='#' class='text-right btn btn-primary btn" + count + "'>");
-      $(".body" + count).append(button);
+      $(".container" + count).append(right);
+      var button = $(
+        "<a href='#' class='text-right btn btn-primary tix-btn btn" + count + "'>"
+      ).text("BUY TICKETS");
+      $(".container" + count).append(button);
       count++;
     }
-    // var row = $("<div class= 'col-md-6 cardHolder" + count + "'>")
-    // $(".row").append(row)
   };
 
-  var apiCall = function () {
-
+  var apiCall = function() {
     makeCard();
 
-    var artist = $("#band-search").val().trim();
+    var artist = $("#band-search")
+      .val()
+      .trim();
 
     var ticketURL =
       "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&keyword=" +
@@ -41,29 +42,41 @@ $(document).ready(function () {
       url: bandsURL,
       method: "GET"
     }).then(function (response) {
-      // Band Name
-      var name = response.name;
-      $(".band-name").text(name)
-      // Band Image
-      var image = response.image_url;
-      console.log(image);
-      $(".rounded-circle").attr("src", image);
-      // Band Facebook Link
-      var facebook = response.facebook_page_url;
-      $(".name").text(facebook);
+        // Band Name
+        var name = response.name;
+        $(".band-name").text(name)
+        // Band Image
+        var image = response.image_url;
+        console.log(image);
+        $(".rounded-circle").attr("src", image);
+        // Band Facebook Link
+        var facebook = response.facebook_page_url;
+        $(".name").text(facebook);
     });
 
     // Ajax call for ticketAPI
     $.ajax({
       url: ticketURL,
       method: "GET"
-    }).then(function (response) {
+    }).then(function(response) {
+
+        for(var i = 0; i < 5; i++) {
+            // Venue Date
+            var venueDate = response._embedded.events[i].dates.start.localDate;
+            var convertTime = moment(venueDate, "YYYY/MM/DD").format("MMM D");
+            $(".head" + [i]).text(convertTime);
+            // Venue
+            var venue = response._embedded.events[i]._embedded.venues[0].name;
+            $(".venue" + [i]).text(venue);
+            // City, State
+            var city = response._embedded.events[i]._embedded.venues[0].city.name;
+            var state = response._embedded.events[i]._embedded.venues[0].state.stateCode;
+            $(".p" + [i]).text(city + ", " + state);
+
+        }
+
       // Url to ticket purchase
       console.log(response._embedded.events[0].url);
-      // Venue date
-      console.log(response._embedded.events[0].dates.start.localDate);
-      // Venue time
-      console.log(response._embedded.events[0].dates.start.localTime);
       // Venue name
       console.log(response._embedded.events[0]._embedded.venues[0].name);
       // State
@@ -94,7 +107,7 @@ $(document).ready(function () {
     document.body.style.backgroundColor = "#001f3f";
   });
 
-  $("#start-btn").on("click", function (event) {
+  $("#start-btn").on("click", function(event) {
     event.preventDefault();
     $("#splashscreen").hide();
     $(".bandPageNew").show();
@@ -102,9 +115,8 @@ $(document).ready(function () {
     document.body.style.backgroundColor = "#DDDDDD";
   });
 
-  $("#second-btn").on("click", function (event) {
+  $("#second-btn").on("click", function(event) {
     event.preventDefault();
     apiCall();
-  })
-
+  });
 });
