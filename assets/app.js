@@ -2,6 +2,7 @@ $(document).ready(function () {
 
     var count = 0;
     var makeCard = function() {
+      $(".cardHolder").empty();
         for(var i = 0; i < 5; i++) {
             var holder = $("<div class ='card" + count + "'>");
             $(".cardHolder").append(holder);
@@ -41,11 +42,15 @@ $(document).ready(function () {
           method: "GET"
       }).then(function (response) {
           // Band Name
-          console.log(response.name);
+          var name = response.name;
+          $(".band-name").text(name)
           // Band Image
-          console.log(response.image_url);
+          var image = response.image_url;
+          console.log(image);
+          $(".rounded-circle").attr("src", image);
           // Band Facebook Link
-          console.log(response.facebook_page_url);
+          var facebook = response.facebook_page_url;
+          $(".name").text(facebook);
       });
       
       // Ajax call for ticketAPI
