@@ -69,7 +69,7 @@ body{
     /* font-family: 'Press Start 2P', cursive; */
     /* font-family: 'Monoton', cursive; */
     /* font-family: 'Noto Serif JP', serif; */
-    font-size: 25px;
+    font-size: 15px;
     color: #FFFFFF;    
 }
 
@@ -85,9 +85,6 @@ h1 {
 .bandPageNew {
     display: none;
     width: 100%
-}
-.tix-btn{
-    float: right;
 }
 @media only screen and (max-width: 768px){
     #band-search{
