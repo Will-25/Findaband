@@ -22,18 +22,31 @@ $(document).ready(function() {
     }
   };
 
+  makeCard();
+
   var apiCall = function() {
-    makeCard();
 
     var artist = $("#band-search")
       .val()
       .trim();
 
-    var ticketURL =
-      "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&keyword=" +
-      artist +
-      ticketAPI;
-    var bandsURL = "https://rest.bandsintown.com/artists/" + artist + bandsAPI;
+      var secondArtist = $("#second-band-search").val().trim();
+
+    $("#band-search").val("");
+    $("#second-band-search").val("");
+
+    if(artist !== "") {
+        var ticketURL =
+        "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&keyword=" +
+        artist +
+        ticketAPI;
+      var bandsURL = "https://rest.bandsintown.com/artists/" + artist + bandsAPI;
+    } else {
+        var ticketURL =
+        "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&keyword=" +
+        secondArtist +
+        ticketAPI;
+      var bandsURL = "https://rest.bandsintown.com/artists/" + secondArtist + bandsAPI;    }
 
     // Ajax call for bandsAPI
     $.ajax({
