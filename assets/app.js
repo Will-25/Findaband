@@ -48,6 +48,8 @@ $(document).ready(function() {
         ticketAPI;
       var bandsURL = "https://rest.bandsintown.com/artists/" + secondArtist + bandsAPI;    }
 
+    var tasteURL = "http://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?limit=4&type=music&info=1&q=" + artist + tasteAPI;
+
     // Ajax call for bandsAPI
     $.ajax({
       url: bandsURL,
@@ -97,17 +99,26 @@ $(document).ready(function() {
       // City
       console.log(response._embedded.events[0]._embedded.venues[0].city.name);
       // Address
-      console.log(
-        response._embedded.events[0]._embedded.venues[0].address.line1
-      );
-    });
-  };
+      console.log(response._embedded.events[0]._embedded.venues[0].address.line1);
 
-  $("#homeButton").on("click", function(event) {
+    });
+
+    $.ajax({
+      url: tasteURL,
+      method: "GET"
+    }).then(function (response) {
+      console.log(response.Similar.Info[0].wTeaser);
+
+    });
+
+  }
+
+  $("#homeButton").on("click", function (event) {
     event.preventDefault();
     $("#splashscreen").show();
     $(".bandPageNew").hide();
     document.body.style.backgroundColor = "#001f3f";
+    $("#band-search").val("");
   });
 
   $("#start-btn").on("click", function(event) {
