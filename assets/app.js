@@ -86,7 +86,7 @@ $(document).ready(function() {
           var state = response._embedded.events[i]._embedded.venues[0].state.stateCode;
           $(".p" + [i]).text(city + ", " + state);
           // Url to ticket purchase
-          var purchaseTicket = response._embedded.events[0].url;
+          var purchaseTicket = response._embedded.events[i].url;
           $(".btn" + [i]).attr("href", purchaseTicket);
         }
     });
