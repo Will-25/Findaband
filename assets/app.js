@@ -15,7 +15,7 @@ $(document).ready(function() {
       var right = $("<p class='text-right card-text d-inline p" + count + "'>");
       $(".container" + count).append(right);
       var button = $(
-        "<a href='#' class='text-right btn btn-primary tix-btn btn" + count + "'>"
+        "<a href='#' target='_blank' class='text-right btn btn-primary tix-btn btn" + count + "'>"
       ).text("BUY TICKETS");
       $(".container" + count).append(button);
       count++;
@@ -74,33 +74,21 @@ $(document).ready(function() {
     }).then(function(response) {
 
         for(var i = 0; i < 5; i++) {
-            // Venue Date
-            var venueDate = response._embedded.events[i].dates.start.localDate;
-            var convertTime = moment(venueDate, "YYYY/MM/DD").format("MMM D");
-            $(".head" + [i]).text(convertTime);
-            // Venue
-            var venue = response._embedded.events[i]._embedded.venues[0].name;
-            $(".venue" + [i]).text(venue);
-            // City, State
-            var city = response._embedded.events[i]._embedded.venues[0].city.name;
-            var state = response._embedded.events[i]._embedded.venues[0].state.stateCode;
-            $(".p" + [i]).text(city + ", " + state);
-
+          // Venue Date
+          var venueDate = response._embedded.events[i].dates.start.localDate;
+          var convertTime = moment(venueDate, "YYYY/MM/DD").format("MMM D");
+          $(".head" + [i]).text(convertTime);
+          // Venue
+          var venue = response._embedded.events[i]._embedded.venues[0].name;
+          $(".venue" + [i]).text(venue);
+          // City, State
+          var city = response._embedded.events[i]._embedded.venues[0].city.name;
+          var state = response._embedded.events[i]._embedded.venues[0].state.stateCode;
+          $(".p" + [i]).text(city + ", " + state);
+          // Url to ticket purchase
+          var purchaseTicket = response._embedded.events[0].url;
+          $(".btn" + [i]).attr("href", purchaseTicket);
         }
-
-      // Url to ticket purchase
-      console.log(response._embedded.events[0].url);
-      // Venue name
-      console.log(response._embedded.events[0]._embedded.venues[0].name);
-      // State
-      console.log(
-        response._embedded.events[0]._embedded.venues[0].state.stateCode
-      );
-      // City
-      console.log(response._embedded.events[0]._embedded.venues[0].city.name);
-      // Address
-      console.log(response._embedded.events[0]._embedded.venues[0].address.line1);
-
     });
 
     $.ajax({
@@ -108,7 +96,6 @@ $(document).ready(function() {
       method: "GET"
     }).then(function (response) {
       console.log(response.Similar.Info[0].wTeaser);
-
     });
 
   }
