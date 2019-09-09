@@ -56,9 +56,9 @@ body{
 .jumbotron {
     border-radius: 0rem;
     padding: 1rem;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(133, 13, 13, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(252, 219, 219, 0.2), 0 6px 20px 0 rgba(133, 13, 13, 0.19);
     /* background-image: linear-gradient(#85144b,#FF4136); */
-    background-image: linear-gradient(#001f3f,#0074D9);
+    background-image: url("texture-background.jpg");
 
 }
 
