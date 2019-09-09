@@ -50,7 +50,7 @@ body{
 }
 .band{ 
     color: yellow;
-    font-family: 'Monoton', cursive;
+    font-family: 'Pacifico', cursive;
     text-align: center;
 }
 .jumbotron {
@@ -92,7 +92,7 @@ h1 {
 }
 
 .navbar-brand {
-    font-family: 'Monoton', cursive;
+    font-family: 'Pacifico', cursive;
 }
 .bandPageNew {
     display: none;
@@ -120,6 +120,14 @@ h1 {
     #splashscreen {
         width: 500px;
         margin: 0px;
+    }
+    .artist-info {
+        height: 200px;
+        overflow: scroll;
+    }
+    .cardHolder {
+        height: 400px;
+        overflow: scroll;
     }
     
 }
