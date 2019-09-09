@@ -31,6 +31,10 @@ h4 {
     margin-right: 30px;
 }
 
+.carD {
+    margin-top: 30px !important;
+}
+
 
 
 #band-search{
@@ -73,16 +77,27 @@ body{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(133, 13, 13, 0.19);
 }
 
+.rounded-circle2 {
+    border-radius: 50%!important;
+    width: 125px;
+    height: 125px;
+    object-fit: cover;
+    border-width: 3px !important;
+    border-style: solid;
+    border-color: #FFFFFF !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(133, 13, 13, 0.19);
+}
+
+.containerR {
+    max-width: 100% !important;
+}
+
 .band-name {
-    /* font-family: 'Arvo', serif; */
-    /* font-family: 'Shadows Into Light', cursive; */
-    /* font-family: 'Permanent Marker', cursive; */
     font-family: 'Rock Salt', cursive;
-    /* font-family: 'Press Start 2P', cursive; */
-    /* font-family: 'Monoton', cursive; */
-    /* font-family: 'Noto Serif JP', serif; */
-    font-size: 15px;
-    color: #FFFFFF;    
+    font-size: 40px;
+    color: #FFFFFF;
+    padding-top: 15px;
+    text-shadow: 2px 2px 4px #000000; 
 }
 
 h1 {
