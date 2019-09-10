@@ -95,9 +95,9 @@ body{
 }
 
 .rounded-circle2 {
-    border-radius: 50%!important;
-    width: 125px;
-    height: 125px;
+    /* border-radius: 50%!important; */
+    width: 75%;
+    height: 75%;
     object-fit: cover;
     border-width: 3px !important;
     border-style: solid;
