@@ -1,4 +1,8 @@
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 #splashscreen {
     height: 30%;
     width: 36%;
@@ -69,6 +73,7 @@ body{
     font-family: 'Pacifico', cursive;
     text-align: center;
 }
+
 .jumbotron {
     border-radius: 0rem;
     padding: 1rem;
@@ -120,6 +125,7 @@ h1 {
 
 .navbar-brand {
     font-family: 'Pacifico', cursive;
+    font-size: 20px;
 }
 .bandPageNew {
     display: none;
@@ -127,6 +133,16 @@ h1 {
 }
 .tix-btn{
     float: right;
+}
+.card-header {
+    font-size: 22px;
+}
+
+
+#noshows {
+    text-align:center;
+    margin-left:30px;
+    
 }
 @media only screen and (max-width: 768px){
     #band-search{
