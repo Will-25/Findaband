@@ -1,6 +1,6 @@
-$(document).ready(function() {
+$(document).ready(function () {
   var count = 0;
-  var makeCard = function() {
+  var makeCard = function () {
     for (var i = 0; i < 5; i++) {
       var holder = $("<div class ='card card" + count + "'>");
       $(".cardHolder").append(holder);
@@ -16,8 +16,8 @@ $(document).ready(function() {
       $(".container" + count).append(right);
       var button = $(
         "<a href='#' target='_blank' class='text-right btn btn-primary tix-btn btn" +
-          count +
-          "'>"
+        count +
+        "'>"
       ).text("BUY TICKETS");
       $(".container" + count).append(button);
       count++;
@@ -26,7 +26,7 @@ $(document).ready(function() {
 
   makeCard();
 
-  var apiCall = function() {
+  var apiCall = function () {
     var artist = $("#band-search")
       .val()
       .trim();
@@ -70,7 +70,7 @@ $(document).ready(function() {
     $.ajax({
       url: bandsURL,
       method: "GET"
-    }).then(function(response) {
+    }).then(function (response) {
       // Band Name
       var name = response.name;
       $(".band-name").text(name);
@@ -87,12 +87,8 @@ $(document).ready(function() {
     $.ajax({
       url: ticketURL,
       method: "GET"
-    }).then(function(response) {
+    }).then(function (response) {
 
-      if (response._embedded.events.length < 5) {
-        $(".cardHolder").html("<div class='card' id='noshows'>")
-        $("#noshows").text("no upcoming shows :(")
-      } else {
       // For loop that's pushing all the info into the Cards
       for (var i = 0; i < 5; i++) {
         // Venue Date
@@ -111,21 +107,29 @@ $(document).ready(function() {
         var purchaseTicket = response._embedded.events[i].url;
         $(".btn" + [i]).attr("href", purchaseTicket);
       }
-    }
     });
 
     // Ajax call for tasteAPI
     $.ajax({
       url: tasteURL,
       method: "GET"
-    }).then(function(response) {
+    }).then(function (response) {
+      console.log(response);
       // Description of artist
       var artistBio = response.Similar.Info[0].wTeaser;
       $(".artist-bio").text(artistBio);
+      var sim1 = response.Similar.Results[0].Name;
+      $(".relArt1").text(sim1);
+      var sim2 = response.Similar.Results[1].Name;
+      $(".relArt2").text(sim2);
+      var sim3 = response.Similar.Results[2].Name;
+      $(".relArt3").text(sim3);
+      var sim4 = response.Similar.Results[3].Name;
+      $(".relArt4").text(sim4);
     });
   };
 
-  $("#homeButton").on("click", function(event) {
+  $("#homeButton").on("click", function (event) {
     event.preventDefault();
     $("#splashscreen").show();
     $(".bandPageNew").hide();
@@ -133,7 +137,7 @@ $(document).ready(function() {
     $("#band-search").val("");
   });
 
-  $("#start-btn").on("click", function(event) {
+  $("#start-btn").on("click", function (event) {
     event.preventDefault();
     $("#splashscreen").hide();
     $(".bandPageNew").show();
@@ -141,7 +145,7 @@ $(document).ready(function() {
     document.body.style.backgroundColor = "#DDDDDD";
   });
 
-  $("#second-btn").on("click", function(event) {
+  $("#second-btn").on("click", function (event) {
     event.preventDefault();
     apiCall();
   });
