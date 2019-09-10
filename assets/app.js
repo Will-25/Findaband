@@ -112,9 +112,18 @@ $(document).ready(function() {
       url: tasteURL,
       method: "GET"
     }).then(function(response) {
+      console.log(response);
       // Description of artist
       var artistBio = response.Similar.Info[0].wTeaser;
       $(".artist-bio").text(artistBio);
+      var sim1 = response.Similar.Results[0].Name;
+      $(".relArt1").text(sim1);
+      var sim2 = response.Similar.Results[1].Name;
+      $(".relArt2").text(sim2);
+      var sim3 = response.Similar.Results[2].Name;
+      $(".relArt3").text(sim3);
+      var sim4 = response.Similar.Results[3].Name;
+      $(".relArt4").text(sim4);
     });
   };
 
