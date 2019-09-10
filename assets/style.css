@@ -116,6 +116,12 @@ h1 {
 .tix-btn{
     float: right;
 }
+
+#noshows {
+    text-align:center;
+    margin-left:30px;
+    
+}
 @media only screen and (max-width: 768px){
     #band-search{
         width: 400px;
