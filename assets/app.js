@@ -81,6 +81,10 @@ $(document).ready(function() {
       // Band Facebook Link
       var facebook = response.facebook_page_url;
       $(".name").text(facebook);
+      if (response.upcoming_event_count === 0) {
+        $(".cardHolder").html("<div class='card' id='noshows'>")
+        $("#noshows").text("no upcoming shows :(")
+      }
     });
 
     // Ajax call for ticketAPI
