@@ -88,6 +88,11 @@ $(document).ready(function() {
       url: ticketURL,
       method: "GET"
     }).then(function(response) {
+
+      if (response._embedded.events.length < 5) {
+        $(".cardHolder").html("<div class='card' id='noshows'>")
+        $("#noshows").text("no upcoming shows :(")
+      } else {
       // For loop that's pushing all the info into the Cards
       for (var i = 0; i < 5; i++) {
         // Venue Date
@@ -106,8 +111,10 @@ $(document).ready(function() {
         var purchaseTicket = response._embedded.events[i].url;
         $(".btn" + [i]).attr("href", purchaseTicket);
       }
+    }
     });
 
+    // Ajax call for tasteAPI
     $.ajax({
       url: tasteURL,
       method: "GET"
