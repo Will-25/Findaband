@@ -126,6 +126,14 @@ $(document).ready(function () {
       $(".relArt3").text(sim3);
       var sim4 = response.Similar.Results[3].Name;
       $(".relArt4").text(sim4);
+      var simImg1 = response.Similar.Results[0].yUrl;
+      $(".relImg1").attr("url", simImg1);
+      var simImg2 = response.Similar.Results[1].yUrl;
+      $(".relImg2").attr("url", simImg2);
+      var simImg3 = response.Similar.Results[2].yUrl;
+      $(".relImg3").attr("url", simImg3);
+      var simImg4 = response.Similar.Results[3].yUrl;
+      $(".relImg4").attr("url", simImg4);
     });
   };
 
