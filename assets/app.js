@@ -108,6 +108,7 @@ $(document).ready(function() {
       }
     });
 
+    // Ajax call for tasteAPI
     $.ajax({
       url: tasteURL,
       method: "GET"
