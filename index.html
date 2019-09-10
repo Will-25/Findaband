@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>finDABand</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/style.css">
@@ -12,12 +13,14 @@
 
 <body>
     <div id="splashscreen">
-        <div class="splashBox form-group">
+        <div class="animated fadeInDown splashBox form-group">
             <h1 class="band">Findaband</h1>
-            <input type="text" class="form-control" id="band-search" placeholder="search your favorite artist">
-            <br>
-            <button type="submit" id="start-btn" class="start-btn btn btn-warning black-background white">Search
-                Artists</button>
+            <form class="form-inline">
+                <input type="text" class="form-control" id="band-search" placeholder="search your favorite artist">
+                <br>
+                <button type="submit" id="start-btn" class="start-btn btn btn-warning black-background white">Search
+                    Artists</button>
+            </form>
         </div>
     </div>
     <div class="bandPageNew">
@@ -30,7 +33,7 @@
             </form>
         </nav>
         <div class="jumbotron">
-            <div class="container text-center">
+            <div class="animated bounceIn container text-center">
                 <img class="rounded-circle border">
                 <div class="band-name">
                     <h1 class="name"></h1>
@@ -42,7 +45,7 @@
 
             <div class="col-md-6">
                 <div class="card artist-info bg-light">
-                        <div class="card-header">Artist Info:</div>
+                    <h2 class="card-header">Artist Info:</h2>
                     <div class="card-body">
                         <p class="artist-bio"></p>
                     </div>
@@ -52,17 +55,21 @@
 
         <div class="containerR card carD">
             <div class="row">
-                <div class="col-md-4 text-center">
+                <div class="col-md-3 text-center">
                     <img class="rounded-circle2">
-                    <p class="card-title relatedArt1">Related Artist 1</p>
+                    <p class="card-title relArt1">Related Artist 1</p>
                 </div>
-                <div class="col-md-4 text-center">
+                <div class="col-md-3 text-center">
                     <img class="rounded-circle2">
-                    <p class="card-title relatedArt1">Related Artist 1</p>
+                    <p class="card-title relArt2">Related Artist 2</p>
                 </div>
-                <div class="col-md-4 text-center">
+                <div class="col-md-3 text-center">
                     <img class="rounded-circle2">
-                    <p class="card-title relatedArt1">Related Artist 1</p>
+                    <p class="card-title relArt3">Related Artist 3</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img class="rounded-circle2">
+                    <p class="card-title relArt4">Related Artist 4</p>
                 </div>
             </div>
         </div>
