@@ -118,6 +118,7 @@ $(document).ready(function () {
       // Description of artist
       var artistBio = response.Similar.Info[0].wTeaser;
       $(".artist-bio").text(artistBio);
+      // Related artist name
       var sim1 = response.Similar.Results[0].Name;
       $(".relArt1").text(sim1);
       var sim2 = response.Similar.Results[1].Name;
@@ -126,14 +127,15 @@ $(document).ready(function () {
       $(".relArt3").text(sim3);
       var sim4 = response.Similar.Results[3].Name;
       $(".relArt4").text(sim4);
+      // Related artist video thumbnail link
       var simImg1 = response.Similar.Results[0].yUrl;
-      $(".relImg1").attr("url", simImg1);
+      $(".relImg1").attr("src", simImg1);
       var simImg2 = response.Similar.Results[1].yUrl;
-      $(".relImg2").attr("url", simImg2);
+      $(".relImg2").attr("src", simImg2);
       var simImg3 = response.Similar.Results[2].yUrl;
-      $(".relImg3").attr("url", simImg3);
+      $(".relImg3").attr("src", simImg3);
       var simImg4 = response.Similar.Results[3].yUrl;
-      $(".relImg4").attr("url", simImg4);
+      $(".relImg4").attr("src", simImg4);
     });
   };
 
