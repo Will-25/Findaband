@@ -38,34 +38,8 @@ $(document).ready(function () {
     $("#band-search").val("");
     $("#second-band-search").val("");
 
-    if (artist !== "") {
-      var ticketURL =
-        "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&keyword=" +
-        artist +
-        ticketAPI;
 
-      var bandsURL =
-        "https://rest.bandsintown.com/artists/" + artist + bandsAPI;
-
-      var tasteURL =
-        "http://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?limit=4&type=band&info=1&q=" +
-        artist +
-        tasteAPI;
-    } else {
-      var ticketURL =
-        "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&keyword=" +
-        secondArtist +
-        ticketAPI;
-
-      var bandsURL =
-        "https://rest.bandsintown.com/artists/" + secondArtist + bandsAPI;
-
-      var tasteURL =
-        "http://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?limit=4&type=band&info=1&q=" +
-        secondArtist +
-        tasteAPI;
-    }
-    console.log(tasteURL);
+  var ajaxCall = function () {
 
     // Ajax call for bandsAPI
     $.ajax({
@@ -138,7 +112,51 @@ $(document).ready(function () {
       var simImg4 = response.Similar.Results[3].yUrl;
       $(".relImg4").attr("src", simImg4);
     });
+    }
+
+    if (artist !== "") {
+      var ticketURL =
+        "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&keyword=" +
+        artist + "&apikey=EUnqG6jlJ5Of975tN9AYBMOjFs1wpPt5";
+
+      var bandsURL =
+        "https://rest.bandsintown.com/artists/" + artist + "?app_id=06a0bf01f7da2f97b38deff3c911b9cd";
+
+      var tasteURL =
+        "http://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?limit=4&type=band&info=1&q=" +
+        artist + "&k=345412-FINDABAN-G0RXKFDA";
+
+      $("#splashscreen").hide();
+      $(".bandPageNew").show();
+      ajaxCall();
+      document.body.style.backgroundColor = "#DDDDDD";
+      $(".form-control").css("border", "solid grey 1px");
+      $(".form-control").attr('class', 'form-control mr-sm-2');
+
+
+    } else if (secondArtist !== "") {
+      var ticketURL =
+        "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&keyword=" +
+        secondArtist + "&apikey=EUnqG6jlJ5Of975tN9AYBMOjFs1wpPt5";
+
+      var bandsURL =
+        "https://rest.bandsintown.com/artists/" + secondArtist + "?app_id=06a0bf01f7da2f97b38deff3c911b9cd";
+
+      var tasteURL =
+        "http://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?limit=4&type=band&info=1&q=" +
+        secondArtist + "&k=345412-FINDABAN-G0RXKFDA";
+        ajaxCall();
+        
+      $(".form-control").css("border", "solid grey 1px");
+      $(".form-control").attr('class', 'form-control mr-sm-2');
+
+    } else {
+      $(".form-control").css("border", "solid red 1px");
+      $(".form-control").attr('class', 'form-control mr-sm-2 animated shake');
+    }
+
   };
+
 
   $("#homeButton").on("click", function (event) {
     event.preventDefault();
@@ -150,10 +168,7 @@ $(document).ready(function () {
 
   $("#start-btn").on("click", function (event) {
     event.preventDefault();
-    $("#splashscreen").hide();
-    $(".bandPageNew").show();
     apiCall();
-    document.body.style.backgroundColor = "#DDDDDD";
   });
 
   $("#second-btn").on("click", function (event) {
