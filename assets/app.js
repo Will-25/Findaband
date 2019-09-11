@@ -37,6 +37,7 @@ $(document).ready(function() {
       .val()
       .trim();
 
+    // Clearing both inputs
     $("#band-search").val("");
     $("#second-band-search").val("");
 
