@@ -48,7 +48,7 @@ $(document).ready(function () {
         "https://rest.bandsintown.com/artists/" + artist + bandsAPI;
 
       var tasteURL =
-        "http://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?limit=4&type=music&info=1&q=" +
+        "http://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?limit=4&type=band&info=1&q=" +
         artist +
         tasteAPI;
     } else {
@@ -61,10 +61,11 @@ $(document).ready(function () {
         "https://rest.bandsintown.com/artists/" + secondArtist + bandsAPI;
 
       var tasteURL =
-        "http://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?limit=4&type=music&info=1&q=" +
+        "http://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?limit=4&type=band&info=1&q=" +
         secondArtist +
         tasteAPI;
     }
+    console.log(tasteURL);
 
     // Ajax call for bandsAPI
     $.ajax({
