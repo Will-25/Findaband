@@ -154,7 +154,7 @@ $(document).ready(function() {
         "?app_id=06a0bf01f7da2f97b38deff3c911b9cd";
 
       var tasteURL =
-        "http://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?limit=4&type=band&info=1&q=" +
+        "https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?limit=4&type=band&info=1&q=" +
         secondArtist +
         "&k=345412-FINDABAN-G0RXKFDA";
 
