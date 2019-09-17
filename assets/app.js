@@ -187,7 +187,7 @@ $(document).ready(function() {
   });
 
 // BandsPage search button
-  $("#second-btn").on("click", function(event) {
+   $("#second-btn").on("click", function(event) {
     event.preventDefault();
     apiCall();
   });
